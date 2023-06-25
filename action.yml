@@ -1,0 +1,19 @@
+name: 'ApiCustomAction'
+description: ''
+inputs:
+  args:
+    description: 'Arguments to redocly cli'
+    required: true
+    default: ''
+outputs:
+  std-err: # id of output
+    description: 'Redocly Error Output'
+  std-out: # id of output
+    description: 'Redocly Standard Output'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
+
+
